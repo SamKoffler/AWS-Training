@@ -11,3 +11,18 @@ def is_instance_healthy(cpu_utilization, system_status, instance_status):
     if system_status == "ok" or instance_status == "ok":
         return False
     return True
+
+
+# Scenario 2: CloudWatch alarm evaluation bug
+# Expected: Alarm should trigger when average exceeds threshold
+
+def evaluate_alarm(metric_values, threshold):
+    total = 0
+    for v in metric_values:
+        total += v
+    avg = total / len(metric_values)
+
+    if avg < threshold:
+        return "ALARM"
+    else:
+        return "OK"
