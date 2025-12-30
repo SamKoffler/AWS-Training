@@ -1,0 +1,36 @@
+Elastic Beanstalk
+Like Heroku (a PaaS), not as popular anymore
+Can deploy dockerized containers
+Lot fo legacy componenta
+
+
+Types of Web environments:
+Load-Balanced- Env:
+Used ASG (auto-Sacaling Group) set to scale
+Designed to scale
+
+Single-Instance Env:
+No ELB tp save on cost
+Still uses ASG 
+Public IP address needs to be used to route traffic to server
+
+
+EB deployment methods
+• Rollign deployment policy requires an ELB
+
+All at once deployment policy is fasterst but most dangerous. Server needs to go down to do it
+
+Rolling deploys batch of instances at a time. Takes batch’s instances out of service, then reattcaches updated services.
+
+Rolling with additional batch - ensures that our capacity is never reduced
+
+Immutable 
+Create a new ESG group with EC2(Elastic Compute Cloud) instances
+Deploy new updated version of a[[ on the new ec2 instances
+
+EB performs in-place updates
+
+
+Blue/Green deployment: when you run two identical production environments
+
+Databases can be added inside or outside EB environment
