@@ -1,0 +1,2 @@
+VPC = Virtual Private Cloud. RDS = Relational Database Service
+When you need to make security for a VPC so that it’s not accessible through the internet and only through one port, you need to add an inbound rule that only accepts requests from the security group over the application tier and remove other inbound rules. You also need to specify a DB group that contained only private subnets  for the DB instances.
