@@ -1,0 +1,32 @@
+IAM
+Identity and Access Management.
+It’s a global service
+A root account i created by default by you can create Users
+You can have groups
+Users and Groups can be assigned JSON documents called policies
+Least priveleges is a good principle in AWS to give someone the minimum amount of pirvelges they should have
+
+You’re given a root account but it’s best practice not to use that, want to create admin accounts
+
+IAM is a Global service (dont need to select region)
+
+With Group policies, they apply to every user in that group. If one person has only one policy, it can bea ttached with an inline policy
+
+Can be overlaps of groups
+
+The IAM policy structure is JSON
+In a policy statement, it contains the 
+“Sid” - identifier of the statement
+Effect - Allow or deny access
+Principal - account/user/group it applies to (can also apply to root users)
+Action - list of actions this policy applied
+Resource - list of resources this policy applied (Typically a s3 bucket)
+
+Removing a user from a group removes their permissions that they had
+Can add IAMReadOnly so that user can read IAM policy
+On IAM dashboard -> Permission policies it shows the way they are attached (Directly, group etc)
+Clicking on JSON shows the JSON form of the policy
+You Can create your own policy and use visual editor or JSON editor
+You can make a password policy(through account settings) and add requirements for a password
+You can add Multi-Factor Authentication
+With a physical device like Google Authentication, Authy, YubiKey, Hardware Keyfob
