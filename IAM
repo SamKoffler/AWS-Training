@@ -4,7 +4,7 @@ It’s a global service
 A root account i created by default by you can create Users
 You can have groups
 Users and Groups can be assigned JSON documents called policies
-Least priveleges is a good principle in AWS to give someone the minimum amount of pirvelges they should have
+Least privileges is a good principle in AWS to give someone the minimum amount of pirvelges they should have
 
 You’re given a root account but it’s best practice not to use that, want to create admin accounts
 
@@ -30,3 +30,42 @@ You Can create your own policy and use visual editor or JSON editor
 You can make a password policy(through account settings) and add requirements for a password
 You can add Multi-Factor Authentication
 With a physical device like Google Authentication, Authy, YubiKey, Hardware Keyfob
+
+Access Keys
+Users are able to access AWS through:
+AWS management console
+AWS Command line interface (CLI) which uses access keys
+AWS SDK which uses access keys
+
+With the CLI, you can interact with AWS commands in yout terminal
+
+AWS SDK lets your manage your APIs and embeds your application
+
+When you remove a user from a group, they’ll lose their permissions so they when you do “aws iam list-users” they wont show up
+
+AWS Cloudshell
+Only available in some regions
+It’s a terminal in AWS Management Console you can use and do commands as normal
+Can do aws commands and it’ll show region you;re in, security credentials etc
+
+IAM Roles
+You can assign roles to AWS services
+In an EC2 Instance you can make an IAM role.
+It can access information, as long as it has the right permission
+You creat your own role by going to IAM->Role-Aws Service->Search EC2->Use Case EC2
+Can add IAMReadOnly for example
+
+IAM Security
+You can make an IAM security report that shows all users and their permissions
+Can make list of all services and when each was accessed
+Good to verify least privileges
+
+On Left hand side “Credentials Report" -> Download credentials report
+Can see passwords changed info, access keys, account info
+Can look at Access analyzer too to see if user has correct permissions
+
+IAM Best practices
+Don't use root account except AWS setup
+You want to make users and groups and strong password policy
+Never shared IAM user and access keys
+Audit permissions of your account with access advisor
